@@ -22,11 +22,11 @@ model User {
 
 model LinkCollection {
   id Int @id @default(autoincrement())
-  userId Int
   name String
-  user User? @relation(fields: [userId], references: [id])
+  user User[]
   viewsCount Int? @default(0)
   likesCount Int? @default(0)
+  addToListCount Int? @default(0)
   links Link[]
   tags Tag[]
   isPrivate Boolean @default(false)
